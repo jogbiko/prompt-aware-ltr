@@ -33,13 +33,10 @@ across policies. Fourth, the evaluation is limited to a single model
 (Llama-3.1-8B-Instruct), a single GPU (one NVIDIA A100), and two
 1{,}000-request held-out sets, which may not capture the full range of
 production traffic patterns or hardware configurations. Finally, the serving
-environment uses a newer vLLM release (0.6.1.post2) than the original LTR
-framework's target version (0.4.1), a substitution required because the
-original version has no prebuilt wheel for the Python 3.12 environment used
-here and because the platform's pre-installed PyTorch build is not
-ABI-compatible with vLLM's compiled CUDA extensions; this limits direct
-numerical comparison to results reported under the original framework's
-software stack.
+environment uses a newer vLLM release than the original LTR framework's
+target version, as documented in Section~\ref{sec:implementation}, which
+limits direct numerical comparison to results reported under the original
+framework's software stack.
 
 \subsection{Future Work}
 \label{subsec:future-work}

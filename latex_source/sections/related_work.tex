@@ -40,3 +40,18 @@ that learned predictor intact and asks whether combining its score with an
 independent, non-learned signal -- prompt length -- improves robustness when
 the predictor's score alone is imperfect, which to our knowledge has not been
 examined in prior scheduling work.
+
+Most directly, this work builds on and extends the empirical study of
+Saravana Kumar et al.~\cite{saravanakumar2025empirical}, which applies the
+same OPT-125M-based LTR scheduling approach of~\cite{fu2024efficient} within
+vLLM, integrating it with vLLM's swap-based preemption mechanism and
+evaluating it on Llama-3.1-8B-Instruct against FCFS and classification-based
+baselines. That study reports a latency reduction of up to 2.1$\times$ over
+FCFS at high request rates, but also identifies a key limitation: performance
+gains measured on an in-distribution evaluation set decline substantially
+when the same predictor is evaluated on a held-out, previously unseen
+distribution of prompts, a pattern the authors attribute to overfitting in
+the learned predictor. This project takes that reported limitation as its
+starting point and evaluates whether a non-learned, always-available
+secondary signal -- prompt length -- mitigates the degradation observed
+under distribution shift.

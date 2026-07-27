@@ -1,7 +1,5 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-
-\usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -10,7 +8,10 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{xcolor}
-
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{placeins}
+\usepackage{float}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -23,56 +24,46 @@
 
 \begin{document}
 
-\title{\fontfamily{ptm}\selectfont LLM Inference Latency Using Prompt-Aware Learning-to-Rank Scheduling with Secondary Ranking Signals}
+\title{"Group 4: Improving LLM Inference Latency Using Prompt-Aware Learning-to-Rank Scheduling with Secondary Ranking Signals"}
 
 \author{
 \IEEEauthorblockN{Wai Zin Mon}
 \IEEEauthorblockA{
-School of Computer Science and Engineering \\
+Olsen College of Engineering and Science \\
 Fairleigh Dickinson University \\
-Teaneck, NJ, USA \\
-waizinmon77okt@gmail.com}
+Vancouver, Canada }
 \and
 \IEEEauthorblockN{Joy Ogbiko}
 \IEEEauthorblockA{
-School of Computer Science and Engineering \\
+Olsen College of Engineering and Science \\
 Fairleigh Dickinson University \\
-Teaneck, NJ, USA}
+Vancouver, Canada}
 }
 
 \maketitle
-
 \input{sections/abstract}
 
 \begin{IEEEkeywords}
-LLM inference serving, learning-to-rank, request scheduling, head-of-line blocking, vLLM
+\textbf{LLM inference serving, learning-to-rank, request scheduling, head-of-line blocking, vLLM}
 \end{IEEEkeywords}
 
-\clearpage
 \input{sections/introduction}
-
-\clearpage
+\FloatBarrier
 \input{sections/background}
-
-\clearpage
+\FloatBarrier
 \input{sections/related_work}
-
-\clearpage
+\FloatBarrier
 \input{sections/methodology}
-
-\clearpage
+\FloatBarrier
+\input{sections/implementation}
+\FloatBarrier
 \input{sections/evaluation}
-
-\clearpage
+\FloatBarrier
 \input{sections/discussion}
-
-\clearpage
+\FloatBarrier
 \input{sections/conclusion}
-
-\clearpage
+\FloatBarrier
 \input{sections/appendix}
-
-\clearpage
 \label{sec:references}
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
